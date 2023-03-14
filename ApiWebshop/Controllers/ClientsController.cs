@@ -63,16 +63,16 @@ namespace ApiWebshop.Controllers
 
                     var result = new
                     {
-                        id = customer.id.Value,
-                        createdAt = customer.createdAt,
-                        name = customer.name,
-                        username = customer.username,
-                        firstName = customer.firstName,
-                        lastName = customer.lastName,
-                        address = customer.address.postalCode + " " + customer.address.city,
-                        profil = customer.profile.firstName + " " + customer.profile.lastName,
-                        company = customer.company.companyName,
-                        orders = customer.orders
+                        Id = customer.id,
+                        CreatedAt = customer.createdAt,
+                        Name = customer.name,
+                        Username = customer.username,
+                        FirstName = customer.firstName,
+                        LastName = customer.lastName,
+                        Address = customer.address.postalCode + " " + customer.address.city,
+                        Profil = customer.profile.firstName + " " + customer.profile.lastName,
+                        Company = customer.company.companyName,
+                        Orders = customer.orders
                     };
 
                     return Ok(JsonConvert.SerializeObject(result));
