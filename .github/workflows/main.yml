@@ -12,5 +12,5 @@ jobs:
       with:
         server: files.000webhost.com
         username: apiwebshop
-        password: iCwpRiCu7(Pxzz((Ent*F
+        password: iCwpRiCu7(Pxzz((Ent*
         server-dir : public_html/
