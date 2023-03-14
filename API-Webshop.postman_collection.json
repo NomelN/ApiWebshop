@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "0efed179-a59c-47ea-8077-e8254665b42c",
+		"name": "API-Webshop",
+		"description": "La collection contenant les différentes méthodes de tests de l'API Webshop.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24039131"
+	},
+	"item": [
+		{
+			"name": "Tous les produits",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Produits avec son  ID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Tous les clients",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Client avec son  ID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Commande avec ID client",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Commandes produits",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
