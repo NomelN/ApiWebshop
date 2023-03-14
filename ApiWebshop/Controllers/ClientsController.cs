@@ -120,7 +120,7 @@ namespace ApiWebshop.Controllers
 
             return Ok(JsonConvert.SerializeObject(data));
         }
-        [HttpGet("customer/{idClient}/order/products/{idCommande}/products", Name = "Récupérer les produits d'une commande")]
+        [HttpGet("{idClient}/commandes/{idCommande}/produits", Name = "Récupérer les produits d'une commande")]
         public async Task<ActionResult<string>> GetOrderProducts(string idClient, string idCommande)
         {
             var data = new List<dynamic>();
