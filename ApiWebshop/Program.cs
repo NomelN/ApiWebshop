@@ -7,6 +7,7 @@ namespace ApiWebshop
     {
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -34,4 +35,5 @@ namespace ApiWebshop
         }
 
     }
+
 }
