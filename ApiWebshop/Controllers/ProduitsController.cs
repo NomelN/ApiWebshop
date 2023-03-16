@@ -52,7 +52,7 @@ namespace ApiWebshop.Controllers
         [HttpGet("{idProduit}", Name = "Get Produit By Id")]
         [Authorize]
 
-        public async Task<ActionResult<Produits>> GetProduitById(int idProduit, string token)
+        public async Task<ActionResult<Produits>> GetProduitById(int idProduit)
         {
             try
             {

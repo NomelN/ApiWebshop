@@ -10,6 +10,6 @@
         public string Color { get; set; }
         public int Stock { get; set; }
         public string CreatedAt { get; set; }
-
+        public object Id { get; internal set; }
     }
 }
