@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace ApiWebshop.Controllers
@@ -8,6 +9,7 @@ namespace ApiWebshop.Controllers
     public class ClientsController : ControllerBase
     {
         [HttpGet(Name ="GetClients") ]
+        [Authorize]
         public async Task<ActionResult<Clients>> GetClients()
         {
             var data = new List<dynamic>();
@@ -49,6 +51,7 @@ namespace ApiWebshop.Controllers
         }
 
         [HttpGet("{idClient}", Name = "GetClientById")]
+        [Authorize]
 
         public async Task<ActionResult<Clients>> GetClientById(int idClient)
         {
@@ -87,6 +90,7 @@ namespace ApiWebshop.Controllers
         }
 
         [HttpGet("{idClient}/commandes", Name = "GetOrdersById")]
+        [Authorize]
 
         public async Task<ActionResult<Commandes>> GetOrdersById(int idClient)
         {
@@ -121,6 +125,7 @@ namespace ApiWebshop.Controllers
             return Ok(JsonConvert.SerializeObject(data));
         }
         [HttpGet("{idClient}/commandes/{idCommande}/produits", Name = "Récupérer les produits d'une commande")]
+        [Authorize]
         public async Task<ActionResult<CommandeProduit>> GetOrderProducts(string idClient, string idCommande)
         {
             var data = new List<dynamic>();

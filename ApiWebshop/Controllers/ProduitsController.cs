@@ -1,15 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 
 namespace ApiWebshop.Controllers
 {
-    
+
     [Route("api/webshop/[controller]")]
     [ApiController]
     public class ProduitsController : ControllerBase
     {
         [HttpGet(Name = "GetProduits")]
+        [Authorize]
         public async Task<ActionResult<Produits>> GetProducts()
         {
             var data = new List<dynamic>();
@@ -48,8 +50,9 @@ namespace ApiWebshop.Controllers
         }
        
         [HttpGet("{idProduit}", Name = "Get Produit By Id")]
+        [Authorize]
 
-        public async Task<ActionResult<Produits>> GetProduitById(int idProduit)
+        public async Task<ActionResult<Produits>> GetProduitById(int idProduit, string token)
         {
             try
             {

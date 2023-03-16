@@ -1,6 +1,6 @@
 ﻿namespace ApiWebshop.Models
 {
-    public class UtilisateurModel
+    public class Utilisateur
     {
         public int Id { get; set; }
         public string Username { get; set; }
