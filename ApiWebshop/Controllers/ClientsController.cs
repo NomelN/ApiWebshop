@@ -127,7 +127,7 @@ namespace ApiWebshop.Controllers
         }
         [HttpGet("{idClient}/commandes/{idCommande}/produits", Name = "Récupérer les produits d'une commande")]
         [Authorize]
-        public async Task<ActionResult<CommandeProduit>> GetOrderProducts(string idClient, string idCommande)
+        public async Task<ActionResult<CommandeProduit>> GetOrderProducts(int idClient, int idCommande)
         {
             var data = new List<dynamic>();
             try
@@ -143,8 +143,8 @@ namespace ApiWebshop.Controllers
                     {
                         data.Add(new
                         {
-                            idCommande = product.orderId,
-                            idClient = product.id,
+                            idCommande = product.id,
+                            idClient = product.orderId,
                             name = product.name.Value,
                             description = product.details.description.Value,
                             price = product.details.price.Value,
