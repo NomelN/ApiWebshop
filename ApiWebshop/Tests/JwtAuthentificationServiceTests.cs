@@ -7,7 +7,7 @@ namespace ApiWebshop.Tests
     [TestClass]
     public class JwtAuthentificationServiceTests
     {
-        private JwtAuthentificationService _jwtAuthentificationService;
+        private JwtAuthentificationService? _jwtAuthentificationService;
 
         [TestInitialize]
         public void Initialize()

@@ -15,10 +15,7 @@ namespace ApiWebshop.Tests
         public AuthentificationControllerTests()
         {
             _mockAuthService = new Mock<InterfaceJwtAuthentificationService>();
-            _mockConfig = new ConfigurationBuilder().AddInMemoryCollection(new Dictionary<string, string>
-            {
-                { "Jwt:Key", "mysecretkey" }
-            }).Build();
+            _mockConfig = new ConfigurationBuilder().AddInMemoryCollection(new Dictionary<string, string>{{ "Jwt:Key", "mysecretkey" }}).Build();
         }
 
         [Fact]
