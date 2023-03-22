@@ -163,28 +163,6 @@ namespace ApiWebshop.Controllers
 
             return Ok(JsonConvert.SerializeObject(data));
         }
-
-        [HttpDelete("{idClient}/commandes/{idCommande}")]
-        [Authorize]
-        public async Task<IActionResult> SupprimerCommande(string idClient, string idCommande)
-        {
-            try
-            {
-                using (var httpClient = new HttpClient())
-                {
-                    var response = await httpClient.DeleteAsync($"https://615f5fb4f7254d0017068109.mockapi.io/api/v1/customers/{idClient}/orders/{idCommande}");
-                    response.EnsureSuccessStatusCode();
-                }
-
-                return NoContent();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Impossible de supprimer la commande: " + e.Message);
-                return BadRequest();
-            }
-        }
-
     }
 }
 
