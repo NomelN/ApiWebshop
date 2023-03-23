@@ -20,9 +20,41 @@ GET /api/webshop/clients/{idClient}/:commandes	Récupère les commandes passées
 GET /api/webshop/clients/{idClient}/:commandes/{idCommande}/produits	Récupère les produits d'une commande
 
 # Authentification
-Pour accéder à ces endpoints, l'utilisateur doit être authentifié. L'authentification se fait via un token JWT qui doit être inclus dans le header de la requête.
+Les utilisateurs qui peuvent avoir accès aux données sont spécifiés dans le code.
 
-Les utilisateurs qui peuvent avoir accès aux données sont spécifiés dans le code. 
+L'authentification est requise pour accéder à certains points de terminaison de l'API. L'API utilise l'authentification JWT, qui implique l'envoi d'un jeton dans l'en-tête Authorization de la requête HTTP.
 
-# Erreurs
-En cas d'erreur, les endpoints renvoient une réponse avec un code HTTP 400 (Bad Request) et un message d'erreur.
+  # Connexion
+Pour obtenir un jeton JWT, l'utilisateur doit envoyer une requête 
+
+POST /api/webshop/authentication/login 
+
+avec un objet JSON contenant son email et son mot de passe.
+
+Si l'e-mail et le mot de passe sont corrects, l'API répondra avec un jeton JWT. Le jeton peut ensuite être envoyé dans l'en-tête Authorization des requêtes ultérieures pour authentifier l'utilisateur.
+
+Exemple de demande :
+
+http
+
+POST /api/webshop/authentication/login HTTP/1.1
+
+Type de contenu : application/json
+
+{
+
+   "email": "utilisateur@exemple.com",
+      
+   "mot de passe": "mot de passe"
+   
+}
+
+  # Accéder aux endpoints protégés
+Pour accéder à un point de terminaison protégé, l'utilisateur doit envoyer une demande avec un jeton JWT dans l'en-tête d'autorisation. Le jeton doit être préfixé par la chaîne "Bearer", comme ceci :
+
+http
+
+GET /api/boutique en ligne/produits HTTP/1.1
+Autorisation : Bearer token
+Si le jeton est valide, l'API répondra avec les données demandées. Si le jeton n'est pas valide ou a expiré, l'API répondra avec un code HTTP 400 (Bad Request) non autorisé.
+
