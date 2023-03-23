@@ -4,6 +4,26 @@
 
 L'API Webshop permet d'accéder, à la liste des produits disponibles dans notre ERP et de voir les détails de chaque produits, à la liste des clients, d'obtenir des informations sur un client spécifique, de récupérer les commandes passées par un client et de récupérer les produits d'une commande.
 
+# Requirements
+Pour exécuter ce projet, vous devez avoir installé les logiciels suivants :
+
+Visual Studio 2022 ou version ultérieure
+
+.NET 7 ou version ultérieure
+
+# Pour Commencer
+Clonez ce dépôt : git clone https://github.com/NomelN/ApiWebshop.git
+
+Ouvrez le projet dans Visual Studio.
+
+Restaurez les packages NuGet en cliquant avec le bouton droit sur la solution dans l'explorateur de solutions et en sélectionnant "Restaurer les packages NuGet".
+
+Générez le projet en sélectionnant "Build Solution" dans le menu "Build".
+
+Exécutez le projet en appuyant sur F5 ou en sélectionnant "Exécuter" dans le menu "Débogage".
+
+L'API s'exécute maintenant sur http://localhost:port. On peut maintenant tester l'API à l'aide de Postman.
+
 # Endpoints
 L'API Webshop expose les endpoints suivants :
 
@@ -55,6 +75,8 @@ Pour accéder à un point de terminaison protégé, l'utilisateur doit envoyer u
 http
 
 GET /api/boutique en ligne/produits HTTP/1.1
+
 Autorisation : Bearer token
+
 Si le jeton est valide, l'API répondra avec les données demandées. Si le jeton n'est pas valide ou a expiré, l'API répondra avec un code HTTP 400 (Bad Request) non autorisé.
 
